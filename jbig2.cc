@@ -24,8 +24,8 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <allheaders.h>
-#include <pix.h>
+#include <leptonica/allheaders.h>
+#include <leptonica/pix.h>
 
 #include "jbig2enc.h"
 
