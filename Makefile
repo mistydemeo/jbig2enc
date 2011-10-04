@@ -1,11 +1,11 @@
 CC=g++
-LEPTONICA=../leptonica-1.68
-# For example, a fink MacOSX install:
-# EXTRA=-I/sw/include/ -I/sw/include/libpng -I/sw/include/libjpeg -L/sw/lib
-CFLAGS=-I${LEPTONICA}/src -Wall -I/usr/include -L/usr/lib -O3 ${EXTRA}
+# Use EXTRA to define extra lib and include paths.
+# For example, a Homebrew Mac OS X install:
+# EXTRA=-I`brew --prefix`/include/ -I/usr/X11/include -L`brew --prefix`/lib -L/usr/X11/lib ${LEPTINC}
+CFLAGS=-Wall -I/usr/include -L/usr/lib -O3 ${EXTRA}
 
 jbig2: libjbig2enc.a jbig2.cc
-	$(CC) -o jbig2 jbig2.cc -L. -ljbig2enc ${LEPTONICA}/src/.libs/liblept.a $(CFLAGS) -lpng -ljpeg -ltiff -lm -lz
+	$(CC) -o jbig2 jbig2.cc -L. -ljbig2enc -llept $(CFLAGS) -lpng -ljpeg -ltiff -lm -lz
 
 libjbig2enc.a: jbig2enc.o jbig2arith.o jbig2sym.o
 	ar -rcv libjbig2enc.a jbig2enc.o jbig2arith.o jbig2sym.o
