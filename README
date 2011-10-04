@@ -28,8 +28,10 @@ First, read the file PATENTS in the same directory as this file.
 Fetch leptonica from its website and build it. For this you will also
 need the standard libtiff, libpng and libjpeg.
 
-If leptonica was unpacked in ../leptonlib-1.68/ you should just be able to type
-make. Otherwise, fix up the path at the beginning of the Makefile first.
+The jbig2enc makefile assumes that Leptonica is installed to your standard
+system include and lib paths. (This differs from the original version of
+jbig2enc, which used files from the Leptonica tarball.) You may need to
+customize the makefile depending on your system's paths.
 
 USAGE:
 
