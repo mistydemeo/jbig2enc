@@ -18,5 +18,13 @@ AC_CHECK_LIB([png], [png_get_io_ptr], [], [
               echo "Error! libpng not detected."
               exit -1
               ])
+AC_CHECK_LIB([z], [zlibVersion], [], [
+              echo "Error! zlib not detected."
+              exit -1
+              ])
+AC_CHECK_LIB([m], [sqrt], [], [
+              echo "Error! libm not detected."
+              exit -1
+              ])
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
